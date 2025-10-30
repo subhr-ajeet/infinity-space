@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Space Club - Explore the Cosmos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans tracking-wider" x-data="{ open: false }">
+
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-extrabold text-indigo-400 hover:text-indigo-300 transition duration-300">
+                    Infinity <span class="text-white">Space Club</span>
+                </a>
+                
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#home" class="text-gray-300 hover:text-indigo-400 transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300">About Us</a>
+                    <a href="#events" class="text-gray-300 hover:text-indigo-400 transition duration-300">Events</a>
+                    <a href="#blogs" class="text-gray-300 hover:text-indigo-400 transition duration-300">Blogs</a>
+                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300">Contact</a>
+                </nav>
+                
+                <button @click="open = !open" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    <svg x-show="open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+        </div>
+
+        <div x-show="open" x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800 transition duration-300">Home</a>
+                <a href="#about" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800 transition duration-300">About Us</a>
+                <a href="#events" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800 transition duration-300">Events</a>
+                <a href="#blogs" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800 transition duration-300">Blogs</a>
+                <a href="#contact" @click="open = false" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800 transition duration-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative overflow-hidden pt-20 pb-40 min-h-[600px] flex items-center justify-center">
+            <div class="absolute inset-0 z-0 bg-black opacity-40"></div>
+            <div class="absolute inset-0 z-0 star-field-animation"></div>
+            
+            <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                <h1 class="text-6xl sm:text-7xl font-extrabold mb-4 leading-tight fade-in-up">
+                    <span class="text-indigo-400">Explore. Innovate.</span> Transcend.
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto fade-in-up" style="transition-delay: 0.2s;">
+                    Endless adventures await you where each member plays a vital role in our celestial journey.
+                </p>
+                <a href="#events" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-lg fade-in-up" style="transition-delay: 0.4s;">
+                    Discover Our Universe
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-white fade-in-up">
+                    Our Core Principles
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border-t-4 border-indigo-500 hover:shadow-indigo-500/50 transition duration-500 fade-in-up">
+                        <div class="text-5xl text-indigo-400 mb-4">🚀</div>
+                        <h3 class="text-3xl font-bold mb-4 text-white">Our Mission</h3>
+                        <p class="text-gray-300 text-lg">
+                            We are dedicated to fostering **curiosity, education, and innovation** through engaging events and collaborations. Our goal is to inspire individuals to explore and understand the vastness of space.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border-t-4 border-indigo-500 hover:shadow-indigo-500/50 transition duration-500 fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="text-5xl text-indigo-400 mb-4">🔭</div>
+                        <h3 class="text-3xl font-bold mb-4 text-white">Our Vision</h3>
+                        <p class="text-gray-300 text-lg">
+                            To empower the next generation of space enthusiasts and explorers. Through **teamwork and innovation**, we aim to expand the horizons of exploration and integrate space into education globally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="py-24 bg-gray-800 border-t border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-extrabold text-center mb-16 text-white fade-in-up">
+                    Upcoming Expeditions
+                </h2>
+                
+                <div class="grid lg:grid-cols-3 gap-10">
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-2xl group fade-in-up">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold uppercase tracking-wider text-indigo-400">Past Major Event</span>
+                            <h3 class="text-2xl font-bold text-white mt-2 mb-3">Space Convention 2023</h3>
+                            <p class="text-gray-400">
+                                A flagship annual event bringing together leading scientists, engineers, and enthusiasts for talks and workshops.
+                            </p>
+                            <a href="#" class="mt-4 inline-block text-indigo-400 font-medium hover:text-indigo-300 transition duration-300 transform group-hover:translate-x-1">
+                                View Details &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-2xl group fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold uppercase tracking-wider text-green-400">Upcoming Workshop</span>
+                            <h3 class="text-2xl font-bold text-white mt-2 mb-3">Astronomy 101: Stargazing</h3>
+                            <p class="text-gray-400">
+                                Join us for a hands-on session on using telescopes, identifying constellations, and deep-sky observation.
+                            </p>
+                            <a href="#" class="mt-4 inline-block text-green-400 font-medium hover:text-green-300 transition duration-300 transform group-hover:translate-x-1">
+                                Register Now &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-2xl group fade-in-up" style="transition-delay: 0.4s;">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold uppercase tracking-wider text-red-400">Magazine Release</span>
+                            <h3 class="text-2xl font-bold text-white mt-2 mb-3">Celeste Magazine: Vol 5</h3>
+                            <p class="text-gray-400">
+                                Our latest magazine edition featuring articles on space innovation, student projects, and club highlights.
+                            </p>
+                            <a href="#" class="mt-4 inline-block text-red-400 font-medium hover:text-red-300 transition duration-300 transform group-hover:translate-x-1">
+                                Read Now &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="collaborators" class="py-24 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-white fade-in-up">
+                    Our Valued Collaborators
+                </h2>
+
+                <div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 max-w-4xl mx-auto filter grayscale hover:grayscale-0 transition duration-500">
+                    <div class="h-10 w-auto opacity-70 hover:opacity-100 transition duration-300 fade-in-up">
+                        [ISRO Logo Placeholder]
+                    </div>
+                    <div class="h-10 w-auto opacity-70 hover:opacity-100 transition duration-300 fade-in-up" style="transition-delay: 0.1s;">
+                        [AIAA Logo Placeholder]
+                    </div>
+                    <div class="h-10 w-auto opacity-70 hover:opacity-100 transition duration-300 fade-in-up" style="transition-delay: 0.2s;">
+                        [Mars Society Logo Placeholder]
+                    </div>
+                    <div class="h-10 w-auto opacity-70 hover:opacity-100 transition duration-300 fade-in-up" style="transition-delay: 0.3s;">
+                        [SGAC Logo Placeholder]
+                    </div>
+                    <div class="h-10 w-auto opacity-70 hover:opacity-100 transition duration-300 fade-in-up" style="transition-delay: 0.4s;">
+                        [G20/Y20 Placeholder]
+                    </div>
+                </div>
+
+                <div class="mt-20 text-center">
+                    <h3 class="text-3xl font-bold mb-6 text-indigo-400 fade-in-up" style="transition-delay: 0.5s;">
+                        Distinguished Guests
+                    </h3>
+                    <div class="flex flex-wrap justify-center text-lg text-gray-300 space-x-8 fade-in-up" style="transition-delay: 0.6s;">
+                        <span class="font-medium">Dr. Prakash Chauhan (Director, NRSC)</span>
+                        <span class="font-medium">|</span>
+                        <span class="font-medium">Mr. James Burk (Mars Society)</span>
+                        <span class="font-medium">|</span>
+                        <span class="font-medium">Shri R. Umamashwaran (Director, HSFC)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-800 border-t border-gray-700 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                
+                <div class="fade-in-up">
+                    <h4 class="text-xl font-bold mb-4 text-white">Infinity Space Club</h4>
+                    <p class="text-gray-400 mb-2">The Hubble, Energy Acres, UPES,</p>
+                    <p class="text-gray-400">Bidholi, Dehradun - 248007, Uttarakhand</p>
+                </div>
+
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h4 class="text-xl font-bold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-indigo-400 transition duration-300">About Us</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-indigo-400 transition duration-300">Events Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">Read Celeste Magazine</a></li>
+                    </ul>
+                </div>
+
+                <div class="fade-in-up" style="transition-delay: 0.4s;">
+                    <h4 class="text-xl font-bold mb-4 text-white">Join Our Newsletter</h4>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Your Email Address" class="p-3 rounded-lg bg-gray-700 border-gray-600 text-white focus:ring-indigo-500 focus:border-indigo-500" required>
+                        <button type="submit" class="p-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-500">&copy; 2025 Infinity Space Club. All rights reserved.</p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">[Instagram]</a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">[LinkedIn]</a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">[YouTube]</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
