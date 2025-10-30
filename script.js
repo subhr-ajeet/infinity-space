@@ -1,3 +1,10 @@
+// Infinity Loader Transition
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.getElementById('infinity-loader').classList.add('fade-out');
+  }, 2200); // Match SVG animation duration
+});
+
 // JavaScript for Intersection Observer (Scroll-triggered fade-in-up)
 
 document.addEventListener('DOMContentLoaded', () => {

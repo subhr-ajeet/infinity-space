@@ -1,41 +1,89 @@
 /* Custom Scroll Animation Utility */
+
 .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    /* Transition applied to enable the animation */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  /* Transition applied to enable the animation */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* Class added by JavaScript when element is in view */
 .fade-in-up.animate {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Custom Dark Scrollbar for better aesthetics */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #111827; /* Darker than the body */
+  background: #111827; /* Darker than the body */
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #4B5563;
-    border-radius: 4px;
+  background: #4B5563;
+  border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #6B7280;
+  background: #6B7280;
 }
 
 /* Hero Section Subtle Star Field Animation */
 .star-field-animation {
-    /* Radial gradient defines the 'stars' */
-    background-image: radial-gradient(circle, #3730a3 1px, transparent 1px); 
-    background-size: 20px 20px;
-    animation: moveStars 120s linear infinite;
+  /* Radial gradient defines the 'stars' */
+  background-image: radial-gradient(circle, #3730a3 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: moveStars 120s linear infinite;
 }
 
 @keyframes moveStars {
-    from { background-position: 0 0; }
-    to { background-position: 10000px 10000px; }
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
+
+/* Infinity Loader Transition */
+#infinity-loader {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #090b1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+#infinity-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#infinity-svg {
+  animation: draw-infinity 2.2s cubic-bezier(.4,0,.2,1) both;
+}
+
+@keyframes draw-infinity {
+  from {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    opacity: 0;
+    transform: scale(0.7) rotate(-12deg);
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.04) rotate(2deg);
+  }
+  to {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
 }
